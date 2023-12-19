@@ -9,7 +9,7 @@ class VideoList extends HTMLElement {
      */
     set videos(videos) {
         this._videos = videos
-        this.classList = "flex flex-wrap justify-around"
+        this.classList = "sm:flex sm:flex-wrap sm:justify-around"
         this.render() //auto render because only need this data
     }
 

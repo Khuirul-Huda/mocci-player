@@ -10,9 +10,9 @@ const main = () => {
     
     getTrending().then((data) => videoList.videos = data.data).then(() => {
         document.querySelectorAll('video-item').forEach((el) => {
-            el.addEventListener('click', (e) => {
-                console.log(e)
-            })
+            // el.addEventListener('click', (e) => {
+            //     console.log(e)
+            // })
         })
     })
 

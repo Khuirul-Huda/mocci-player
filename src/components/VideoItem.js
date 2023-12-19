@@ -1,3 +1,5 @@
+import onVideoItemClicked from "../handlers/VideoItemClick"
+
 class VideoItem extends HTMLElement {
     constructor() {
         super()
@@ -40,15 +42,15 @@ class VideoItem extends HTMLElement {
         
     }
 
-    updateId() {
-        this.id = this._id
-    }
+    // updateId() {
+    //     this.id = this._id
+    // }
 
     render() {
         this.innerHTML = `
         
-        <div class="m-3 p-2 shadow  rounded-lg w-80 cursor-pointer transition-all hover:shadow-md" >
-                    <img class="rounded-lg"
+        <div class="sm:m-1 sm:p-2 sm:shadow mt-2 sm:rounded-lg  sm:w-80 max-w-screen-sm w-full cursor-pointer sm:transition-all " >
+                    <img class="sm:rounded-lg w-full"
                         src="${this._thumbnail}"
                         alt="" loading="lazy" >
                     <div class="flex mt-1 items-center">
@@ -64,6 +66,10 @@ class VideoItem extends HTMLElement {
                 </div>
         
         `
+
+        this.addEventListener('click', (e) => {
+            onVideoItemClicked(this.id)
+        })
     }
 
     connectedCallback() {
