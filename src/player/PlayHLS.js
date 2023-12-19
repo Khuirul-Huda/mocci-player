@@ -5,12 +5,12 @@ import Hls from "@oplayer/hls"
 
 
 
-const playHLS = (hlsUrl) => {
+const playHLS = (hlsUrl, thumbnail) => {
 
     Player.make('video-player', {
         source: {
           src: hlsUrl,
-          poster: 'https://oplayer.vercel.app/poster.png'
+          poster: thumbnail
         }
       })
         .use([ui({

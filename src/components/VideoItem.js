@@ -49,12 +49,12 @@ class VideoItem extends HTMLElement {
     render() {
         this.innerHTML = `
         
-        <div class="sm:m-1 sm:p-2 sm:shadow mt-2 sm:rounded-lg  sm:w-80 max-w-screen-sm w-full cursor-pointer sm:transition-all " >
+        <div class="sm:m-1 sm:p-2 sm:shadow mt-2 sm:rounded-lg  sm:w-80 max-w-screen-sm w-full cursor-pointer sm:transition-all my-3" >
                     <img class="sm:rounded-lg w-full"
                         src="${this._thumbnail}"
                         alt="" loading="lazy" >
                     <div class="flex mt-1 items-center">
-                        <img class="h-14 w-14 rounded-full"
+                        <img class="h-14 p-1 w-14 rounded-full"
                             src="${this._uploaderAvatar}"
                             alt="">
                         <div class="ml-1">

@@ -16,7 +16,9 @@ class VideoList extends HTMLElement {
     render() {
         // console.log(this._videos)
         this._videos.forEach((video) => {
-          
+            // include stream only hehe
+            if (video.type != 'stream') return
+
             const videoElement = document.createElement('video-item')
             videoElement.thumbnail = video.thumbnail
             videoElement.title = video.title

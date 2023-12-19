@@ -11,7 +11,7 @@ const onVideoItemClicked = (videoId) => {
         resetContainer('video-player')
         removeElement('video-detail')
         // HLS?
-        playHLS(streamData.data.hls)
+        playHLS(streamData.data.hls, streamData.data.thumbnail)
         setDetail(streamData.data.title, streamData.data.description, streamData.data.uploaderAvatar, streamData.data.uploader, streamData.data.views)
 
         window.scrollTo({top: 0, behavior:"smooth"})
