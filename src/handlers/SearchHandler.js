@@ -1,17 +1,14 @@
 import searchVideo from "../apis/Search"
 import removeElement from "../util/removeElement"
+import updateVideoList from "./updateVideoList"
 
 const onSearch = (query) => {
     searchVideo(query).then((data) => {
+        const { items: videoItems } = data.data
 
         removeElement('video-list')
-        const videoListNew = document.createElement('video-list')
-        // console.log(data.data.items)
-        videoListNew.videos = data.data.items
-
-        document.getElementById('main').append(videoListNew)
-        document.querySelector('video-list').scrollIntoView()
-        // handle
+        updateVideoList(videoItems, true)
+        
 
     }).catch((err) => console.error(err))
 }

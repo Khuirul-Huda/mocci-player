@@ -1,5 +1,5 @@
 
-const setDetail = (title, description, uploaderAvatar, uploaderName, views) => {
+const setDetail = (title, description, uploaderAvatar, uploaderName, views, subscriber = "n/a") => {
     
     const videoDetailElement = document.createElement('video-detail')
     videoDetailElement.vTitle = title
@@ -7,6 +7,7 @@ const setDetail = (title, description, uploaderAvatar, uploaderName, views) => {
     videoDetailElement.uploaderAvatar = uploaderAvatar
     videoDetailElement.description = description
     videoDetailElement.views = views
+    videoDetailElement.subs = subscriber
     videoDetailElement.render()
     document.querySelector('video-more').append(videoDetailElement)
     

@@ -8,18 +8,7 @@ const main = () => {
     const videoList = document.createElement('video-list')
     mainElement.appendChild(videoList)
     
-    getTrending().then((data) => videoList.videos = data.data).then(() => {
-        document.querySelectorAll('video-item').forEach((el) => {
-            // el.addEventListener('click', (e) => {
-            //     console.log(e)
-            // })
-        })
-    })
-
-
-
-    
-    
+    getTrending().then((data) => videoList.videos = data.data)
 
 }
 

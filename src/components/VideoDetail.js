@@ -35,6 +35,10 @@ class VideoDetail extends HTMLElement {
         this._views = views
     }
 
+    set subs(subs) {
+        this._subs = subs
+    }
+
     render() {
         this.innerHTML = `
         
@@ -49,7 +53,10 @@ class VideoDetail extends HTMLElement {
                     <img class="h-10 w-10 rounded-full"
                         src="${this._uploaderAvatar}"
                         alt="">
-                    <p class="ml-2 text-md">${this._uploaderName}</p>
+                    <div class="flex flex-col">
+                        <p class="ml-2 text-md">${this._uploaderName}</p>
+                        <p class="ml-2 text-sm text-gray-600">${this._subs} subscriber</p>
+                    </div>
                 </div>
                 <span class="absolute top-4 right-4 transition-all peer-checked:rotate-180">
                     <svg xmlns="http://www.w3.org/2000/svg" class="scale-125" height="16" width="10"

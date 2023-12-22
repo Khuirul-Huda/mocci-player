@@ -1,21 +1,23 @@
-import Player, { isMobile } from "@oplayer/core"
+import Player, { PLAYER_EVENTS, isMobile } from "@oplayer/core"
 import ui from "@oplayer/ui"
 
 import Hls from "@oplayer/hls"
 
 
 
-const playHLS = (hlsUrl, thumbnail) => {
+const playHLS = (hlsUrl, thumbnail, onEnded = () => {console.debug('Player ended')}) => {
 
     Player.make('video-player', {
         source: {
           src: hlsUrl,
           poster: thumbnail
-        }
+        },
+        autoplay: true
       })
         .use([ui({
             screenshot: true,
-            pictureInPicture: true
+            pictureInPicture: true,
+            subtitle: true
         })])
         .use([Hls({
             qualityControl: true,
@@ -24,6 +26,8 @@ const playHLS = (hlsUrl, thumbnail) => {
             
         })])
         .create()
+        .on('ended', (e) => onEnded() )
+        
 } 
 
 export default playHLS
