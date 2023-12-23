@@ -1,4 +1,4 @@
-import Player, { PLAYER_EVENTS, isMobile } from "@oplayer/core"
+import Player  from "@oplayer/core"
 import ui from "@oplayer/ui"
 
 import Hls from "@oplayer/hls"
@@ -27,6 +27,10 @@ const playHLS = (hlsUrl, thumbnail, onEnded = () => {console.debug('Player ended
         })])
         .create()
         .on('ended', (e) => onEnded() )
+        .on('error', () => (e) => console.error(e))
+        
+        
+        
         
 } 
 
