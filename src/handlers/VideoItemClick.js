@@ -6,12 +6,14 @@ import resetContainer from "../util/resetContainer"
 import setMetadata from "./Metadata"
 import updateVideoList from "./updateVideoList"
 
+
+
 const onVideoItemClicked = (videoId) => {
 
-
+    
     getStream(videoId).then((streamData) => {
         const { hls,
-            thumbnail,
+            thumbnailUrl,
             title,
             description,
             uploaderAvatar,
@@ -30,7 +32,7 @@ const onVideoItemClicked = (videoId) => {
         resetContainer('video-player')
         removeElement('video-detail')
         // HLS?
-        playHLS(hls, thumbnail, playNextRelation)
+        playHLS(hls, thumbnailUrl, playNextRelation)
         setDetail(
             title,
             description,
@@ -44,7 +46,8 @@ const onVideoItemClicked = (videoId) => {
             artist: uploader,
             album: "General",
             artwork: [{
-                src: String(uploaderAvatar)
+                src: String(thumbnailUrl),
+                type: "image/jpg"
 
             }]
         })
