@@ -3,6 +3,7 @@ import playHLS from "../player/PlayHLS"
 import setDetail from "../player/setDetail"
 import removeElement from "../util/removeElement"
 import resetContainer from "../util/resetContainer"
+import setMetadata from "./Metadata"
 import updateVideoList from "./updateVideoList"
 
 const onVideoItemClicked = (videoId) => {
@@ -38,6 +39,15 @@ const onVideoItemClicked = (videoId) => {
             views,
             uploaderSubscriberCount
         )
+        setMetadata({
+            title: title,
+            artist: uploader,
+            album: "General",
+            artwork: [{
+                src: String(uploaderAvatar)
+
+            }]
+        })
 
         updateVideoList(relatedStreams)
 
