@@ -39,7 +39,11 @@ class VideoItem extends HTMLElement {
     set idVideo(idVideo) {
         this._idVideo = idVideo
         this.id = idVideo
-        
+
+    }
+
+    set duration(duration) {
+        this._duration = duration
     }
 
     // updateId() {
@@ -49,8 +53,9 @@ class VideoItem extends HTMLElement {
     render() {
         this.innerHTML = `
         
-        <div class="sm:m-1 sm:p-2 sm:shadow mt-2 sm:rounded-lg  sm:w-80 max-w-screen-sm w-full cursor-pointer sm:transition-all my-3" >
-                    <img class="sm:rounded-lg w-full"
+        <div class="sm:m-1 sm:p-2 sm:shadow mt-2 sm:rounded-lg  sm:w-80 max-w-screen-sm w-full cursor-pointer sm:transition-all my-3 relative" >
+            <span class="bg-white opacity-50  p-3/4 text-xs  rounded-md absolute top-3 right-3">${this._duration}</span>        
+            <img class="sm:rounded-lg w-full"
                         src="${this._thumbnail}"
                         alt="" loading="lazy" >
                     <div class="flex mt-1 items-center">

@@ -9,11 +9,11 @@ class NavBar extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
         
-        <nav class="border-b border-slate-600 p-4 flex flex-row justify-between">
-        <div class="rounded-full px-3 py-1 text-white bg-slate-700 text-xl cursor-pointer shadow-lg font-bold">
-            Mocci<span class="text-red-400">Tube</span></div>
-        <div class="relative"><input id="searchQuery" class="p-1 w-32 ml-1 bg-slate-300 rounded-full shadow-lg" type="text"
-                placeholder="Cari..."> <span id="searchButton" class="absolute cursor-pointer right-2 top-1  rounded-full"><svg
+        <nav class="border-b border-slate-300 p-4 flex flex-row justify-between">
+        <div class="rpx-3 py-1  text-slate-700 text-xl cursor-pointer font-bold">
+                Mocci<span class="text-red-400">Player</span></div>
+        <div class="relative"><input id="searchQuery" class="p-1 w-32 ml-1 rounded-lg shadow-lg" type="text"
+                placeholder="Cari..."> <span id="searchButton" class="absolute cursor-pointer right-2 top-2  rounded-full"><svg
                     xmlns="http://www.w3.org/2000/svg" height="20" width="20"
                     viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
                     <path

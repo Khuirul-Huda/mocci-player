@@ -19,12 +19,22 @@ class VideoList extends HTMLElement {
             // include stream only hehe
             if (video.type != 'stream') return
 
+            const {
+                thumbnail,
+                title,
+                uploaderName,
+                uploaderAvatar,
+                url,
+                duration
+            } = video
+
             const videoElement = document.createElement('video-item')
-            videoElement.thumbnail = video.thumbnail
-            videoElement.title = video.title
-            videoElement.uploaderName = video.uploaderName
-            videoElement.uploaderAvatar = video.uploaderAvatar
-            videoElement.idVideo = String(video.url).substring(9)
+            videoElement.thumbnail = thumbnail
+            videoElement.title = title
+            videoElement.uploaderName = uploaderName
+            videoElement.uploaderAvatar = uploaderAvatar
+            videoElement.idVideo = String(url).substring(9)
+            videoElement.duration = `${Math.floor(duration/60)}:${duration % 60}`
             videoElement.render()
 
             this.appendChild(videoElement)
