@@ -54,7 +54,7 @@ class VideoItem extends HTMLElement {
         this.innerHTML = `
         
         <div class="sm:m-1 sm:p-2 sm:shadow mt-2 sm:rounded-lg  sm:w-80 max-w-screen-sm w-full cursor-pointer sm:transition-all my-3 relative" >
-            <span class="bg-white opacity-50  p-3/4 text-xs  rounded-md absolute top-3 right-3">${this._duration}</span>        
+            <span class="bg-white opacity-50  p-3/4 px-2 text-xs  rounded-md absolute top-3 right-3">${this._duration}</span>        
             <img class="sm:rounded-lg w-full"
                         src="${this._thumbnail}"
                         alt="" loading="lazy" >
