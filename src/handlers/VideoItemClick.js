@@ -20,7 +20,8 @@ const onVideoItemClicked = (videoId) => {
             uploader,
             views,
             uploaderSubscriberCount,
-            relatedStreams
+            relatedStreams,
+            category
         } = streamData.data
 
         const { url } = relatedStreams[0]
@@ -39,12 +40,13 @@ const onVideoItemClicked = (videoId) => {
             uploaderAvatar,
             uploader,
             views,
-            uploaderSubscriberCount
+            uploaderSubscriberCount,
+            category
         )
         setMetadata({
             title: title,
             artist: uploader,
-            album: "General",
+            album: category | "General",
             artwork: [{
                 src: String(thumbnailUrl),
                 type: "image/jpg"
@@ -55,7 +57,12 @@ const onVideoItemClicked = (videoId) => {
         updateVideoList(relatedStreams)
 
         window.scrollTo({ top: 0, behavior: "smooth" })
+
+        window.history.pushState({}, title, '/watch?id='+videoId)
+    }).catch((e)=> {
+        console.error('Cannot play')
     })
+    
 
 
 }

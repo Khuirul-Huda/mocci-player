@@ -23,6 +23,9 @@ class NavBar extends HTMLElement {
 
         `
         document.getElementById('searchButton').addEventListener('click', (e) => onSearch(document.getElementById('searchQuery').value))
+        document.getElementById('searchQuery').addEventListener('keypress', (e) => { if (e.key == "Enter") {
+            onSearch(document.getElementById('searchQuery').value)
+        } })
 
     }
 

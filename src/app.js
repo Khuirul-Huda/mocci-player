@@ -11,7 +11,9 @@ import './components/VideoMore.js'
  * yey selesai
  */
 
-import main from './scripts/main.js'
+// import main from './scripts/main.js'
+import registerListener from './handlers/State.js'
 
 
-document.addEventListener('DOMContentLoaded', main)
+// document.addEventListener('DOMContentLoaded', main)
+document.addEventListener('DOMContentLoaded', registerListener)

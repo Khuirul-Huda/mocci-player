@@ -8,6 +8,7 @@ const searchVideo = (query) => {
             filter: 'all'
         }
     })
+    window.history.pushState({}, `Search: ${query}`, `/search?q=${query}`)
 
     return res
 }
