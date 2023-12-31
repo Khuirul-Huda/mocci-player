@@ -4,7 +4,9 @@ import setDetail from "../player/setDetail"
 import removeElement from "../util/removeElement"
 import resetContainer from "../util/resetContainer"
 import setMetadata from "./Metadata"
+import State from "./State"
 import updateVideoList from "./updateVideoList"
+
 
 
 
@@ -57,8 +59,10 @@ const onVideoItemClicked = (videoId) => {
         updateVideoList(relatedStreams)
 
         window.scrollTo({ top: 0, behavior: "smooth" })
-
-        window.history.pushState({}, title, '/watch?id='+videoId)
+        
+        const {queryStr} = State.getCurrentWindow()
+        const queryURL = new URLSearchParams(queryStr)
+         if (! (queryURL.has('id') && ( queryURL.get('id') == videoId ) ) ) window.history.pushState({}, title, '/watch?id='+videoId);
     }).catch((e)=> {
         console.error('Cannot play')
     })

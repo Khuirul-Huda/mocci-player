@@ -1,5 +1,6 @@
 const resetContainer = (querySelector) => {
-    document.querySelector(querySelector).innerHTML = ''
+    const element = document.querySelector(querySelector)
+    if (element) element.innerHTML = ''
 }
 
 export default resetContainer

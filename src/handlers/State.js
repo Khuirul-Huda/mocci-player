@@ -11,6 +11,8 @@ import main from "../scripts/main";
 import onSearch from "./SearchHandler";
 import onVideoItemClicked from "./VideoItemClick";
 
+const firstPop = true // handle popstate
+
 const routerControl = (path, queryArg) => {
     const query = new URLSearchParams(queryArg)
     switch (path) {
@@ -56,8 +58,9 @@ const getCurrentWindow = () => {
 }
 
 const onPopState = () => {
+    console.log('onpopstate')
     const {pathName, queryStr} = getCurrentWindow()
-    routerControl(pathName, queryStr)
+    if (!firstPop) routerControl(pathName, queryStr)
 } 
 
 const DOMContentLoaded = () => {
@@ -71,4 +74,4 @@ const registerListener = () => {
     
 }
 
-export default registerListener
+export default { registerListener, getCurrentWindow }
