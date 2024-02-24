@@ -1,5 +1,9 @@
+
+
 # Mocci Player
 A beautifuly crafted video player front end. 
+
+A simple video player web application front-end. **Not for production (maybe)**. Created by implementing DOM manipulation and History API. Created for the final project of a course submission.
 
 Yes, just a frontend...
 
@@ -10,7 +14,7 @@ This project is designed to compatible with [TeamPiped/Piped](https://github.com
 ## Configuration
 1. Clone this repository
 2. Copy `sample.env` to `.env`
-3. Fill your api url
+3. Fill your API url
 
 ## Building
 Development
